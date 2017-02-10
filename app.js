@@ -18,12 +18,11 @@ var router = express.Router();
 var cron = require('./crons/mailSender');
 cron();
 
-var privateKey = fs.readFileSync('./hacksparrow-key.pem');
-var certificate = fs.readFileSync('./hacksparrow-cert.pem');
+
 app.set('port', process.env.PORT || 8082);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(favicon(path.join(__dirname, '/public/images/favicon.ico')));
+
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser('1a2b3c4d5e6f'));
@@ -61,7 +60,7 @@ if (env.toLowerCase() === 'development') {
 }
 
 require('./routes')(router);
-var credentials = { key: privateKey, cert: certificate };
+
 http.createServer(app)
     .on('error', function(err) {
         util.log(util.inspect(err));

@@ -17,12 +17,19 @@ var json2csv = require('json2csv');
 module.exports = {
     getReports: function(req, res, next) {
 
+        var obj = {
+            "configcode": "BugStatus",
+            "configvalue1": "Verify12199",
+            "createdby": 1
+        }
+        var a = JSON.stringify(obj);
         var query = {
-            sql: 'call usp_shipping_get_report(?)',
-            values: []
+            sql: 'call new_procedure_test(?)',
+            values: [a]
 
         };
-        //console.log(query);
+        console.log('@', JSON.stringify(obj));
+        console.log(query);
         mysql(query, function(err, result) {
             if (err) {
                 console.log(err);
@@ -30,6 +37,7 @@ module.exports = {
                     'status': 'Error'
                 });
             } else {
+                console.log(result)
                 res.json({
                     'status': 'Successful',
                     'result': result[0]

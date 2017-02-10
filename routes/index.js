@@ -5,7 +5,7 @@ var auth = require('./handlers/authentication');
 var render = require('./handlers/render');
 var url = require('./handlers/url');
 var users = require('./handlers/user');
-var shiping = require('./handlers/shipping');
+var master = require('./handlers/master');
 var mkdirp = require("mkdirp");
 var busboy = require('connect-busboy');
 var parse = require('csv-parse');
@@ -26,15 +26,13 @@ var upload = multer({
 
 module.exports = function(app) {
 
-    //app.get('*', render.redirectMaintenance);
-    app.post('/login', auth.login);
-    app.get('/forgot_password', auth.forgotPass, render.redirect);
-    app.get('/logout', auth.logout);
-    app.all('*', auth.checkauterization, render.redirect);
+    app.get('/check', master.getReports);
+
+    // app.all('*', auth.checkauterization);
 
 
     // *******************Admin Routes
-    app.all('*', auth.checkAdmin, render.redirect);
+    // app.all('*', auth.checkAdmin, render.redirect);
 
 
 

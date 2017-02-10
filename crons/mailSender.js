@@ -2,7 +2,7 @@
 var CronJob = require('cron').CronJob;
 var async = require("async");
 var mail = require('../lib/mailer');
-var merchantInventory = require('../routes/handlers/shipping');
+var merchantInventory = require('../routes/handlers/master');
 var common = require('../lib/common');
 
 
