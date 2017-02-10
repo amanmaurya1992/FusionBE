@@ -1,0 +1,40 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "description": "\"Gernal Framework\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "body-parser": "^1.14.2",
+    "connect-busboy": "0.0.2",
+    "cookie-parser": "^1.4.1",
+    "cron": "^1.1.0",
+    "csv-parse": "^1.0.1",
+    "ejs": "^2.3.4",
+    "errorhandler": "^1.4.3",
+    "excel-parser": "^0.2.2",
+    "express": "^4.13.3",
+    "express-fileupload": "0.0.4",
+    "express-session": "^1.13.0",
+    "graceful": "^1.0.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "json2csv": "^3.4.2",
+    "mathjs": "^3.2.0",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.6.1",
+    "multer": "^1.1.0",
+    "mysql": "^2.10.2",
+    "nodemailer": "^2.0.0",
+    "path": "^0.12.7",
+    "reformed": "^0.1.1",
+    "request": "^2.69.0",
+    "serve-favicon": "^2.3.0",
+    "util": "^0.10.3"
+  }
+}
